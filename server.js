@@ -11,6 +11,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Sample root route check
+app.get('/', (req, res) => {
+  res.json({ message: 'Task Manager API Server is running live! 🚀' });
+});
+
+
 // API Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/tasks', require('./routes/taskRoutes'));
